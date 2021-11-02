@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		18E155F12731E2BA00B80479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E155F02731E2BA00B80479 /* AppDelegate.swift */; };
 		18E155F32731E2BA00B80479 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E155F22731E2BA00B80479 /* SceneDelegate.swift */; };
-		18E155F52731E2BA00B80479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E155F42731E2BA00B80479 /* ViewController.swift */; };
 		18E155F82731E2BA00B80479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E155F62731E2BA00B80479 /* Main.storyboard */; };
 		18E155FA2731E2BC00B80479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E155F92731E2BC00B80479 /* Assets.xcassets */; };
 		18E155FD2731E2BC00B80479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E155FB2731E2BC00B80479 /* LaunchScreen.storyboard */; };
 		18E156082731E2BD00B80479 /* Ice_Cream_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E156072731E2BD00B80479 /* Ice_Cream_TrackerTests.swift */; };
 		18E156122731E2BD00B80479 /* Ice_Cream_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E156112731E2BD00B80479 /* Ice_Cream_TrackerUITests.swift */; };
 		18E156142731E2BD00B80479 /* Ice_Cream_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E156132731E2BD00B80479 /* Ice_Cream_TrackerUITestsLaunchTests.swift */; };
+		18E156212731E6A000B80479 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E156202731E6A000B80479 /* ItemsViewController.swift */; };
+		18E156232731EC3B00B80479 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E156222731EC3B00B80479 /* Item.swift */; };
+		18E156252731EEF200B80479 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E156242731EEF200B80479 /* ItemStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 		18E155ED2731E2BA00B80479 /* Ice Cream Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ice Cream Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E155F02731E2BA00B80479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E155F22731E2BA00B80479 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18E155F42731E2BA00B80479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18E155F72731E2BA00B80479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18E155F92731E2BC00B80479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18E155FC2731E2BC00B80479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		18E1560D2731E2BD00B80479 /* Ice Cream TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ice Cream TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E156112731E2BD00B80479 /* Ice_Cream_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ice_Cream_TrackerUITests.swift; sourceTree = "<group>"; };
 		18E156132731E2BD00B80479 /* Ice_Cream_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ice_Cream_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		18E156202731E6A000B80479 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		18E156222731EC3B00B80479 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		18E156242731EEF200B80479 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +105,13 @@
 			children = (
 				18E155F02731E2BA00B80479 /* AppDelegate.swift */,
 				18E155F22731E2BA00B80479 /* SceneDelegate.swift */,
-				18E155F42731E2BA00B80479 /* ViewController.swift */,
 				18E155F62731E2BA00B80479 /* Main.storyboard */,
 				18E155F92731E2BC00B80479 /* Assets.xcassets */,
 				18E155FB2731E2BC00B80479 /* LaunchScreen.storyboard */,
 				18E155FE2731E2BC00B80479 /* Info.plist */,
+				18E156222731EC3B00B80479 /* Item.swift */,
+				18E156242731EEF200B80479 /* ItemStore.swift */,
+				18E156202731E6A000B80479 /* ItemsViewController.swift */,
 			);
 			path = "Ice Cream Tracker";
 			sourceTree = "<group>";
@@ -258,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18E155F52731E2BA00B80479 /* ViewController.swift in Sources */,
+				18E156232731EC3B00B80479 /* Item.swift in Sources */,
+				18E156212731E6A000B80479 /* ItemsViewController.swift in Sources */,
 				18E155F12731E2BA00B80479 /* AppDelegate.swift in Sources */,
+				18E156252731EEF200B80479 /* ItemStore.swift in Sources */,
 				18E155F32731E2BA00B80479 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +463,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,7 +490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
