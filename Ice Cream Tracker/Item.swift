@@ -20,7 +20,7 @@ class Item: Equatable {
         self.dateCreated = Date()
     }
     convenience init() {
-        self.init(name: "Al's", town: "South Burlington \(Int.random(in: 1...15))", rating: Int.random(in: 1...15))
+        self.init(name: "Al's", town: "South Burlington", rating: Int.random(in: 1...15))
     }
     
     static func ==(lhs: Item, rhs: Item) -> Bool {

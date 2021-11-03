@@ -10,6 +10,31 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showItem":
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.item = item
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
+    
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
@@ -18,12 +43,13 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "UITableViewCell")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         let item = itemStore.allItems[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.town
+        cell.nameLabel.text = item.name
+        cell.townLabel.text = item.town
+        cell.ratingLabel.text = "\(item.rating)/15"
         
         return cell
     }
@@ -42,7 +68,7 @@ class ItemsViewController: UITableViewController {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
-    @IBAction func addNewItem(_ sender: UIButton) {
+    @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         let newItem = itemStore.createItem()
         
         if let index = itemStore.allItems.firstIndex(of: newItem) {
@@ -52,15 +78,9 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-        if isEditing {
-            sender.setTitle("Edit", for: .normal)
-            
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", for: .normal)
-            
-            setEditing(true, animated: true)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 }
