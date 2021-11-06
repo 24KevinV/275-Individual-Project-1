@@ -31,6 +31,7 @@ class ItemsViewController: UITableViewController {
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.item = item
                 detailViewController.imageStore = imageStore
+                detailViewController.itemStore = itemStore
             }
         default:
             preconditionFailure("Unexpected segue identifier")
@@ -98,5 +99,9 @@ class ItemsViewController: UITableViewController {
         super.init(coder: aDecoder)
         
         navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    func removeItem(_ item: Item) {
+        itemStore.removeItem(item)
     }
 }

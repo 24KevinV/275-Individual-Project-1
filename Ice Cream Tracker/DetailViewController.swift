@@ -48,7 +48,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
             print("Deleting item")
-//            ItemsViewController.tableView
+            self.itemStore.removeItem(self.item)
+            self.imageStore.deleteImage(forKey: self.item.itemKey)
+            self.navigationController?.popViewController(animated: true)
 //            let item = itemStore.allItems[indexPath.row]
 //
 //                self.itemStore.removeItem(item)
@@ -74,6 +76,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             navigationItem.title = item.name
         }
     }
+    var itemStore: ItemStore!
     var imageStore: ImageStore!
     
     
