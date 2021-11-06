@@ -7,20 +7,24 @@
 
 import UIKit
 
-class Item: Equatable {
+class Item: Equatable, Codable {
     var name: String
     var town: String
     var rating: Int
+    var notes: String
     let dateCreated: Date
+    let itemKey: String
     
-    init(name: String, town: String, rating: Int) {
+    init(name: String, town: String, rating: Int, notes: String) {
         self.name = name
         self.town = town
         self.rating = rating
+        self.notes = notes
         self.dateCreated = Date()
+        self.itemKey = UUID().uuidString
     }
     convenience init() {
-        self.init(name: "Al's", town: "South Burlington", rating: Int.random(in: 1...15))
+        self.init(name: "New Shop", town: "Location", rating: 1, notes: "")
     }
     
     static func ==(lhs: Item, rhs: Item) -> Bool {

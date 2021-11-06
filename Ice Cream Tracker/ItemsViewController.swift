@@ -9,6 +9,7 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
+    var imageStore: ImageStore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ItemsViewController: UITableViewController {
                 let item = itemStore.allItems[row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.item = item
+                detailViewController.imageStore = imageStore
             }
         default:
             preconditionFailure("Unexpected segue identifier")
@@ -57,10 +59,24 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = itemStore.allItems[indexPath.row]
+            let alertController = UIAlertController(title: nil, message: "Are you sure you want to delete '\(item.name)'", preferredStyle: .alert)
             
-            itemStore.removeItem(item)
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                
+                self.itemStore.removeItem(item)
+                
+                self.imageStore.deleteImage(forKey: item.itemKey)
+                
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                
+                print("Deleting item")
+            }
+            alertController.addAction(deleteAction)
             
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            present(alertController, animated: true, completion: nil)
         }
     }
     

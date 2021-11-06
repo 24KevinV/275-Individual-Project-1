@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181FC89A2736FF8E00FCC97C /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FC8992736FF8E00FCC97C /* ImageStore.swift */; };
 		1858332A2732BFDB00224E26 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185833292732BFDB00224E26 /* ItemCell.swift */; };
 		1858332C2732D3B900224E26 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858332B2732D3B900224E26 /* DetailViewController.swift */; };
 		18E155F12731E2BA00B80479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E155F02731E2BA00B80479 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181FC8992736FF8E00FCC97C /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		185833292732BFDB00224E26 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		1858332B2732D3B900224E26 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		18E155ED2731E2BA00B80479 /* Ice Cream Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ice Cream Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 				18E155F02731E2BA00B80479 /* AppDelegate.swift */,
 				18E155F22731E2BA00B80479 /* SceneDelegate.swift */,
 				18E155F62731E2BA00B80479 /* Main.storyboard */,
+				181FC8992736FF8E00FCC97C /* ImageStore.swift */,
 				18E155F92731E2BC00B80479 /* Assets.xcassets */,
 				1858332B2732D3B900224E26 /* DetailViewController.swift */,
 				18E155FB2731E2BC00B80479 /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				18E156232731EC3B00B80479 /* Item.swift in Sources */,
 				18E156212731E6A000B80479 /* ItemsViewController.swift in Sources */,
 				1858332A2732BFDB00224E26 /* ItemCell.swift in Sources */,
+				181FC89A2736FF8E00FCC97C /* ImageStore.swift in Sources */,
 				18E155F12731E2BA00B80479 /* AppDelegate.swift in Sources */,
 				18E156252731EEF200B80479 /* ItemStore.swift in Sources */,
 				18E155F32731E2BA00B80479 /* SceneDelegate.swift in Sources */,
@@ -457,6 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ice Cream Tracker/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses photos to associate ice cream shops with images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -484,6 +489,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Ice Cream Tracker/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses photos to associate ice cream shops with images";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
